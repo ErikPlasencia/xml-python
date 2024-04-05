@@ -300,7 +300,7 @@ Xml sobre el que se ha realizado este ejercicio;
 # XSLT 
 
 El ***XSLT*** es un lenguaje para transformar documentos XML en otros documentos XML o otros tipos de documentos como por ejemplo HTML.
-Normalmente estos documentos son de entrada XML pero también existen otros tipos de formatos. También hay diferentes procesadores de ==*XSLT*== como C,C++…
+Normalmente estos documentos son de entrada XML pero también existen otros tipos de formatos. También hay diferentes procesadores de ***XSLT*** como C,C++…
 Los navegadores webs mas habituales llevan un procesador XSLT incorporado.
 
 ***XSLT*** funciona tomando un documento XML de origen y aplicando reglas de transformación definidas en un archivo XSLT para generar un nuevo documento con un formato diferente. Es como un conjunto de instrucciones que le dice al procesador cómo presentar los datos XML de una manera específica.
