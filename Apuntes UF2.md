@@ -1,4 +1,4 @@
-# XML  MINI DOM 
+ # XML  MINI DOM 
 Funciones que este realiza;
   - Modulo de ==Python== es el que implementa DOM
   - Te permite trabajar con fitxeros xml:
