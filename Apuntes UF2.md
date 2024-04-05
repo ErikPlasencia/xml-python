@@ -668,3 +668,5 @@ XSL:
     </xsl:template>
 </xsl:stylesheet>
 ```
+#Resultado Practica Evaluable;
+(RESULTADO EVALUABLE.png)
