@@ -186,6 +186,115 @@ XPath es una herramienta poderosa para manipular documentos XML y es ampliamente
 **Ejercicios**
 ---
 
+```
+
+
+1. Sobre el fitxer [botiga.xml](https://drive.google.com/file/d/1vvqo-yC0ZPLqMTkmDR5cADYz5ttivvLm/view?usp=sharing) escriu els paths per a fer les següents cerques:
+    
+
+- Llistat dels títols de totes les pel·lícules de la botiga.
+    
+
+/botiga/bluray/titol/text()
+
+- Llistat de tots els preus de les pel·lícules de la botiga.
+    
+
+/botiga/bluray/preu/text()
+
+- Llistat dels títols de les pel·lícules en català.
+    
+
+//titol[@idioma="ca"]/text()
+
+- Llistat dels títols de les pel·lícules realitzades després o durant el 2008.
+    
+
+//any[text()>=2008]
+
+- Llistat dels títols de les pel·lícules dirigides per “Balaguero, Plaza” amb idioma català.
+    
+
+//bluray[director='Balaguero, Plaza']/titol[@idioma='ca']/text()
+
+- Llistat dels títols i preus de totes les pel·lícules.
+    
+
+//titol | // preu
+
+- Llistat dels títols de les pel·lícules amb un preu superior a 20.
+    
+
+//bluray[preu >20]
+
+- Llistat dels títols de les 5 primeres pel·lícules.
+    
+
+/botiga/bluray[position()<6]/titol
+
+- Preu de la darrera pel·lícula
+    
+
+//bluray[last()]/preu/text()
+
+- Preu de les pel·licules dirigides per "J. Cameron"
+    
+
+//bluray[director='J. Cameron']/preu/text()
+
+Pots provar les solucions amb el [tester online](http://www.freeformatter.com/xpath-tester.html) de xpath[](http://www.freeformatter.com/xpath-tester.html)**
+
+```
+
+Xml sobre el que se ha realizado este ejercicio;
+```XML
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<botiga>
+	<bluray>
+		<titol idioma="ca">Avatar</titol>
+		<director>J. Cameron</director>
+		<preu>21</preu>
+		<any>2009</any>
+	</bluray>
+	<bluray>
+		<titol idioma="en">Zombieland</titol>
+		<director>R. Fleischer</director>
+		<preu>16</preu>
+		<any>2009</any>
+	</bluray>
+	<bluray>
+		<titol idioma="es">REC</titol>
+		<director>Balaguero, Plaza</director>
+		<preu>13</preu>
+		<any>2007</any>
+	</bluray>
+	<bluray>
+		<titol idioma="ca">REC2</titol>
+		<director>Balaguero, Plaza</director>
+		<preu>17</preu>
+		<any>2009</any>
+	</bluray>
+	<bluray>
+		<titol idioma="en">La herencia</titol>
+		<director>Stephen</director>
+		<preu>17</preu>
+		<any>2010</any>
+	</bluray>
+	<bluray>
+		<titol idioma="ca">Even the Rain</titol>
+		<director>Thomas Edison</director>
+		<preu>11</preu>
+		<any>2005</any>
+	</bluray>
+	<bluray>
+		<titol idioma="en">Black Bread</titol>
+		<director>Vila</director>
+		<preu>7</preu>
+		<any>2010</any>
+	</bluray>
+</botiga>
+
+```
 
 ---
 # XSLT 
@@ -203,3 +312,106 @@ Los navegadores webs mas habituales llevan un procesador XSLT incorporado.
 
 >[!warning]
 El examen seguramente será mas fácil que la practica evaluable ya que es muy complicada.
+
+**Ejercicios**
+---
+XML sobre el cual realizaremos el ejercicio;
+```XML
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="botiga.xsl"?>
+<botiga>
+	<bluray>
+		<titol idioma="ca">Avatar</titol>
+		<director>J. Cameron</director>
+		<preu>21</preu>
+		<any>2009</any>
+	</bluray>
+	<bluray>
+		<titol idioma="en">Zombieland</titol>
+		<director>R. Fleischer</director>
+		<preu>16</preu>
+		<any>2009</any>
+	</bluray>
+	<bluray>
+		<titol idioma="es">REC</titol>
+		<director>Balaguero, Plaza</director>
+		<preu>13</preu>
+		<any>2007</any>
+	</bluray>
+	<bluray>
+		<titol idioma="ca">REC2</titol>
+		<director>Balaguero, Plaza</director>
+		<preu>17</preu>
+		<any>2009</any>
+	</bluray>
+	<bluray>
+		<titol idioma="en">La herencia</titol>
+		<director>Stephen</director>
+		<preu>17</preu>
+		<any>2010</any>
+	</bluray>
+	<bluray>
+		<titol idioma="ca">Even the Rain</titol>
+		<director>Thomas Edison</director>
+		<preu>11</preu>
+		<any>2005</any>
+	</bluray>
+	<bluray>
+		<titol idioma="en">Black Bread</titol>
+		<director>Vila</director>
+		<preu>7</preu>
+		<any>2010</any>
+	</bluray>
+</botiga>
+
+
+```
+
+XSLT:
+```XSLT
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+  <html>
+    <head>
+        <script src="https://kit.fontawesome.com/3e4c1a6931.js" crossorigin="anonymous"></script> 
+    </head>
+  <body>
+    <h2>Exercici de la botiga</h2>
+    <table border="1">
+      <tr>
+        <th>Titol</th>
+        <th>Director</th>
+        <th>Preu</th>
+        <th>Any</th>
+        <th>Idioma</th>
+      </tr>
+      <xsl:for-each select="botiga/bluray">
+      <tr>
+        <td><xsl:value-of select="titol" /></td>
+        <td><xsl:value-of select="director" /></td>
+        <td>
+            <xsl:choose>
+                <xsl:when test="preu &gt; 15">
+                    <i class="fa-solid fa-money-bills"></i>
+                </xsl:when>
+                <xsl:otherwise>
+                    <i class="fa-solid fa-money-bill"></i>
+                </xsl:otherwise>
+            </xsl:choose>
+        </td>
+        <td><xsl:value-of select="any" /></td>
+        <td>
+            <img width="20px" height="20px">
+                <xsl:attribute name="src"><xsl:value-of select="titol/@idioma" />.jpg</xsl:attribute>
+            </img>
+        </td>
+      </tr>
+      </xsl:for-each>
+    </table>
+  </body>
+  </html>
+</xsl:template>
+</xsl:stylesheet>
+
+```
