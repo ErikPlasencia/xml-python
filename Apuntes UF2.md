@@ -1,6 +1,6 @@
  # XML  MINI DOM 
 Funciones que este realiza;
-  - Modulo de ==Python== es el que implementa DOM
+  - Modulo de **Python** es el que implementa DOM
   - Te permite trabajar con fitxeros xml:
 			  - Obtener datos 
 			  - Añadir Datos 
@@ -69,7 +69,7 @@ for elemento in elementos:
 
 ```
 
-*==(Esta ultima parte es repetitiva pero como Phyton es lo que mas me cuesta prefiero que este repetido a que aparezca pocas veces en los apuntes)==*
+*(Esta ultima parte es repetitiva pero como Phyton es lo que mas me cuesta prefiero que este repetido a que aparezca pocas veces en los apuntes)*
 
 ***Ejercicios***
 ---
@@ -299,11 +299,11 @@ Xml sobre el que se ha realizado este ejercicio;
 ---
 # XSLT 
 
-El ==*XSLT*== es un lenguaje para transformar documentos XML en otros documentos XML o otros tipos de documentos como por ejemplo HTML.
+El ***XSLT*** es un lenguaje para transformar documentos XML en otros documentos XML o otros tipos de documentos como por ejemplo HTML.
 Normalmente estos documentos son de entrada XML pero también existen otros tipos de formatos. También hay diferentes procesadores de ==*XSLT*== como C,C++…
 Los navegadores webs mas habituales llevan un procesador XSLT incorporado.
 
-**==XSLT==** funciona tomando un documento XML de origen y aplicando reglas de transformación definidas en un archivo XSLT para generar un nuevo documento con un formato diferente. Es como un conjunto de instrucciones que le dice al procesador cómo presentar los datos XML de una manera específica.
+***XSLT*** funciona tomando un documento XML de origen y aplicando reglas de transformación definidas en un archivo XSLT para generar un nuevo documento con un formato diferente. Es como un conjunto de instrucciones que le dice al procesador cómo presentar los datos XML de una manera específica.
 ![[Pasted image 20240402185026.png]]
 
 - Toda la teoria la tenemos en el modle --> [Presentación de XSLT](https://drive.google.com/file/d/1DPOCh9ivLsYqKHWN2exdTVY96LhhdoOS/view)
@@ -414,4 +414,257 @@ XSLT:
 </xsl:template>
 </xsl:stylesheet>
 
+```
+# Practica Evaluable 
+
+XML:
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="horari.xsl"?>
+<horari header="https://i.ibb.co/ykHW3gB/school.jpg">
+    <colors>
+        <!-- Pista: genera classes CSS que es diguin M01, M02
+        <color codi="M01">#ff9999</color>
+        <color codi="M02">#99ff99</color>
+        <color codi="M03">#9999ff</color>
+        <color codi="M04">#ffff99</color>
+        <color codi="M08">#cc99ff</color>
+        <color codi="M09">#ff99ff</color>
+        <color codi="M10">#ffcc99</color>
+        <color codi="M11">#99ffff</color>
+    </colors>
+    <links nom="Enllaços directes">
+        <!-- Pista: els hauràs d'ordenar pq a la imatge es ve
+        <link>
+            <nom>Moodle</nom>
+            <url>https://moodle.insjoaquimmir.cat/</url>
+        </link>
+        <link>
+            <nom>Institut Joaquim Mir</nom>
+            <url>https://agora.xtec.cat/iesjoaquimmir/</url>
+        </link>
+         <link>
+            <nom>Departament d'Educació</nom>
+            <url>https://educacio.gencat.cat/ca/inici</url>
+        </link>
+        <link>
+            <nom>IsardVDI</nom>
+            <url>https://pilotfp.gencat.isardvdi.com/login/jo
+        </link>
+        <link>
+            <nom>IEduca</nom>
+            <url>https://joaquimmir.ieduca.com</url>
+        </link>
+    </links>
+    <setmana>
+        <!-- L'horari el pots fer amb <table> o fent servir f
+        <dia nom="Dilluns">
+            <modul>
+                <codi>M01</codi>
+                <nom>Sistemes Operatius</nom>
+            </modul>
+            <modul>
+                <codi>M02</codi>
+                <nom>Bases de Dades</nom>
+            </modul>
+            <modul>
+                <codi>M03</codi>
+                <nom>Programació</nom>
+            </modul>
+            <modul>
+                <codi>M04</codi>
+                <nom>Marques</nom>
+            </modul>
+            <modul>
+                <codi>M09</codi>
+                <nom>Implantació</nom>
+            </modul>
+            <modul>
+                <codi>M11</codi>
+                <nom>EIE</nom>
+            </modul>
+        </dia>
+        <dia nom="Dimarts">
+            <modul>
+                <codi>M01</codi>
+                <nom>Sistemes Operatius</nom>
+            </modul>
+            <modul>
+                <codi>M10</codi>
+                <nom>FOL</nom>
+            </modul>
+            <modul>
+                <codi>M08</codi>
+                <nom>Desplegament</nom>
+            </modul>
+            <modul>
+                <codi>M03</codi>
+                <nom>Programació</nom>
+            </modul>
+            <modul>
+                <codi>M11</codi>
+                <nom>EIE</nom>
+            </modul>
+            <modul>
+                <codi>M09</codi>
+                <nom>Implantació</nom>
+            </modul>
+        </dia>
+        <dia nom="Dimecres">
+            <modul>
+                <codi>M02</codi>
+                <nom>Bases de Dades</nom>
+            </modul>
+            <modul>
+                <codi>M10</codi>
+                <nom>FOL</nom>
+            </modul>
+            <modul>
+                <codi>M08</codi>
+                <nom>Desplegament</nom>
+            </modul>
+            <modul>
+                <codi>M04</codi>
+                <nom>Marques</nom>
+            </modul>
+            <modul>
+                <codi>M09</codi>
+                <nom>Implantació</nom>
+            </modul>
+            <modul>
+                <codi>M11</codi>
+                <nom>EIE</nom>
+            </modul>
+        </dia>
+        <dia nom="Dijous">
+            <modul>
+                <codi>M01</codi>
+                <nom>Sistemes Operatius</nom>
+            </modul>
+            <modul>
+                <codi>M02</codi>
+                <nom>Bases de Dades</nom>
+            </modul>
+            <modul>
+                <codi>M03</codi>
+                <nom>Programació</nom>
+            </modul>
+            <modul>
+                <codi>M10</codi>
+                <nom>FOL</nom>
+            </modul>
+            <modul>
+                <codi>M04</codi>
+                <nom>Marques</nom>
+            </modul>
+            <modul>
+                <codi>M11</codi>
+                <nom>EIE</nom>
+            </modul>
+        </dia>
+        <dia nom="Divendres">
+            <modul>
+                <codi>M01</codi>
+                <nom>Sistemes Operatius</nom>
+            </modul>
+            <modul>
+                <codi>M02</codi>
+                <nom>Bases de Dades</nom>
+            </modul>
+            <modul>
+                <codi>M10</codi>
+                <nom>FOL</nom>
+            </modul>
+            <modul>
+                <codi>M08</codi>
+                <nom>Desplegament</nom>
+            </modul>
+            <modul>
+                <codi>M04</codi>
+                <nom>Marques</nom>
+            </modul>
+            <modul>
+                <codi>M09</codi>
+                <nom>Implantació</nom>
+            </modul>
+        </dia>
+    </setmana>
+</horari>
+
+```
+
+XSL:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html" indent="yes"/>
+    <xsl:template match="/horari">
+        <head>
+            <style type="text/css">
+                <xsl:for-each select="colors/color">
+                    .<xsl:value-of select="@codi"/>{background-color: <xsl:value-of select="."/>; padding: 15px; margin: 2px;}
+                </xsl:for-each>
+                body{
+                    background-color: rgb(197, 193, 193);
+                    text-align: center;
+                }
+                table{
+                    width: 100%;
+                    text-align: center;
+                    border-collapse: collapse;
+                }
+                th{
+                    background-color: rgb(150, 144, 144);
+                }
+                li{
+                    list-style-type: none;
+                    padding: 6px;
+                }
+                a{
+                    color: rgb(0,0,0);
+                }
+                img{
+                    width: 100%;
+                    height: 130px;
+                }
+            </style>
+        </head>
+        <html>
+            <body>
+                <img src="{@header}"/>
+                <table>
+                    <tr>
+                        <xsl:for-each select="setmana/dia">
+                            <th>
+                                <xsl:value-of select="@nom"/>
+                            </th>
+                        </xsl:for-each>
+                    </tr>
+                    <tr>
+                        <xsl:for-each select="setmana/dia">
+                            <td>
+                                <xsl:for-each select="modul">
+                                    <p class="{codi}">
+                                        <xsl:value-of select="codi"/>&#160;<xsl:value-of select="nom"/>
+                                    </p>
+                                </xsl:for-each>
+                            </td>
+                        </xsl:for-each>
+                    </tr>
+                </table>
+                <ul>
+                    <h1><xsl:value-of select="links/@nom"/></h1>
+                    <xsl:for-each select="links/link">
+                        <xsl:sort select="nom"/>
+                        <li>
+                            <a href="{url}">
+                                <xsl:value-of select="nom"/>
+                            </a>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
 ```
