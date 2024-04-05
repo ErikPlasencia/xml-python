@@ -668,5 +668,5 @@ XSL:
     </xsl:template>
 </xsl:stylesheet>
 ```
-#Resultado Practica Evaluable;
-(RESULTADO EVALUABLE.png)
+# Resultado Practica Evaluable;
+(https://github.com/ErikPlasencia/xml-python/blob/9874014d8526c26aaed57e90fb61e0d7e5ce5264/RESULTADO%20EVALUABLE.png)
